@@ -5,7 +5,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url('public/imgs/imagem-de-fundo.png');
+  background-image: url('/imgs/imagem-de-fundo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
