@@ -5,6 +5,7 @@ import { Bag } from "./Bag";
 export function Battle({pokemonTypes, selectedTypes, setTeamOneWin, setTeamTwoWin, setDraw}) {
   const [fight, setTeamFight] = useState([]);
   const [result, setResult] = useState([]); 
+  const quant = 100;
 
   const handleBattle = () => {
     setDraw(0);
@@ -13,7 +14,7 @@ export function Battle({pokemonTypes, selectedTypes, setTeamOneWin, setTeamTwoWi
     setTeamFight([]);
     setResult([]);
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < quant; i++) {
       const team = getRandomTypes();
       
       setTeamFight(fight => [...fight, team])

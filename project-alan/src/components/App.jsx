@@ -11,9 +11,21 @@ export default function App() {
     "rock", "ghost", "dragon", "dark", "steel", "fairy"
   ];
 
+  const handleFinish = () => {
+    const div = document.querySelector(".fessor");
+    div.style.display = "none"
+  }
+
   return (
     <>
     <div className="App">
+      <div className="fessor">
+        <button onClick={handleFinish}>X</button>
+        Obrigado por testar nosso código, TE AMAMOS 
+        <div className='imgFessor'>
+          <img src="/imgs/i-love.jpg" alt="" />
+        </div>
+      </div>
       <div className="areaGifsTeam">
         <Gifs pokemonTypes={selectedTypes}/>
       </div>

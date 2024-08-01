@@ -1,6 +1,7 @@
 export function Run() {
   const handleClose = () => {
-    alert("Obrigado por testar meu progama, te amo fessor")
+    const div = document.querySelector(".fessor");
+    div.style.display = "flex"
   }
   return (
     <>
