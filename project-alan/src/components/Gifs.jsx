@@ -13,7 +13,7 @@ export default function Gifs({pokemonTypes}) {
         {gif.map((type, index) => {
           return (
             <div key={index} className="containGif">
-              <img src={`public/gifs/${type}.gif`} alt="test" className="gif"/>
+              <img src={`/gifs/${type}.gif`} alt="test" className="gif"/>
               <div className="nameType">{type.toUpperCase()}</div>
             </div>
           )
