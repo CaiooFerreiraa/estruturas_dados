@@ -24,7 +24,7 @@ export function Bag({team, result}) {
                     {array.map(type => {
                       return (
                         <>
-                          <img src={`assets/imgs/${type}.png`} alt="teste" className='logo'/>
+                          <img src={`/imgs/${type}.png`} alt="teste" className='logo'/>
                         </>
                       )
                     })}
