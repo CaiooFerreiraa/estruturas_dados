@@ -29,7 +29,7 @@ export function Battle({pokemonTypes, selectedTypes, setTeamOneWin, setTeamTwoWi
           setResult(result => [...result, "L"])
           break
         case 3:
-          setDraw(draw => draw+ 1);
+          setDraw(draw => draw+1);
           setResult(result => [...result, "D"])
       }
     }

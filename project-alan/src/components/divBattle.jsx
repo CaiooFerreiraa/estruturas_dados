@@ -1,7 +1,6 @@
 import { Party } from "./divBattle Components/Party";
 import { Battle } from "./divBattle Components/Battle";
 import { Run } from "./divBattle Components/Run";
-import { Bag } from "./divBattle Components/Bag";
 import React, { useState } from 'react';
 
 export function divBattle({pokemonTypes, selectedTypes, setSelectedTypes}) {
