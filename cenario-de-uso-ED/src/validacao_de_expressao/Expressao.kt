@@ -1,14 +1,20 @@
 package validacao_de_expressao
 
 class Expressao: Validavel {
-    private var tamanho: Int
     private val arrayCaracter: Array<String?>
     private var index: Int
 
     constructor(tamanho: Int = 10){
-        this.tamanho = tamanho
-        this.arrayCaracter = arrayOfNulls(this.tamanho)
+        this.arrayCaracter = arrayOfNulls(tamanho)
         index = -1
+    }
+
+    override fun estaCheia(): Boolean {
+        return index == arrayCaracter.size -1
+    }
+
+    override fun estaVazia(): Boolean {
+        return index == -1
     }
 
     override fun empilhaCaracter(value: String) {
@@ -25,17 +31,10 @@ class Expressao: Validavel {
         index--
     }
 
-    override fun estaCheia(): Boolean {
-        return index > (tamanho -1)
-    }
-
-    override fun estaVazia(): Boolean {
-        return index == -1
-    }
-
-    override fun olhaTopo(): String {
-        if (estaVazia()) return "Pilha vazia"
-        return arrayCaracter[index].toString()
+    override fun olhaTopo(): String? {
+        var aux: String? = null
+        if (estaVazia()) aux = "Pilha vazia"
+        return aux.toString()
     }
 
     override fun validaExpressao(value: String): String {
@@ -52,4 +51,6 @@ class Expressao: Validavel {
 
         if (arrayCaracter.all { it == null }) return "Expressão válida" else return "Expressão inválida"
     }
+
+
 }
