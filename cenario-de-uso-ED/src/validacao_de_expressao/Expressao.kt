@@ -26,9 +26,12 @@ class Expressao: Validavel {
         }
     }
 
-    override fun desempilhaCaracter() {
-        arrayCaracter[index] = null
-        index--
+    override fun desempilhaCaracter(): Boolean {
+        if (!estaVazia()) {
+            index--
+            return true
+        }
+        return false
     }
 
     override fun olhaTopo(): String? {
@@ -43,13 +46,12 @@ class Expressao: Validavel {
         while (iterator < value.length) {
             if (value[iterator].toString() == "(") empilhaCaracter("(")
             if (value[iterator].toString() == ")") {
-                if (estaVazia()) return "Expressão inválida"
-                desempilhaCaracter()
+                if(!desempilhaCaracter()) return "Expressão inválida"
             }
             iterator++
         }
 
-        if (arrayCaracter.all { it == null }) return "Expressão válida" else return "Expressão inválida"
+        if (estaVazia()) return "Expressão válida" else return "Expressão inválida"
     }
 
 
